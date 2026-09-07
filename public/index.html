@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina — 線上修圖室</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Noto+Sans+TC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><a class="brand" href="#"><span class="spark">✦</span> LUMINA</a><span class="tagline">你的光影，自己定義</span><button class="reset-top" id="reset">↺ 重設全部</button></header>
+  <main>
+    <section class="intro"><p class="eyebrow">BROWSER PHOTO STUDIO</p><h1>把平凡瞬間，<em>調成你的色彩。</em></h1><p>上傳照片，立即調整光線、色彩、裁切與尺寸。所有操作都在你的裝置內完成。</p></section>
+    <section class="studio" id="studio">
+      <div class="canvas-area" id="dropZone">
+        <div class="empty-state" id="emptyState"><div class="upload-icon">↑</div><h2>放入一張照片</h2><p>拖曳至此，或從裝置選擇檔案</p><label for="fileInput" class="upload-btn">選擇照片 <span>→</span></label><input id="fileInput" type="file" accept="image/*" hidden><small>支援 JPG、PNG、WebP</small></div>
+        <div class="image-wrap hidden" id="imageWrap"><canvas id="editorCanvas"></canvas><div class="crop-box hidden" id="cropBox"><i class="handle nw"></i><i class="handle ne"></i><i class="handle sw"></i><i class="handle se"></i></div></div>
+        <div class="drop-hint hidden" id="dropHint">放開以載入照片</div>
+      </div>
+      <aside class="controls">
+        <div class="image-info" id="imageInfo"><span>尚未載入</span><span>—</span></div>
+        <div class="panel"><div class="panel-title"><span>調色</span><button class="mini-reset" id="toneReset">重設</button></div>
+          <div class="slider-group"><label>亮度 <output id="brightnessOut">0</output></label><input id="brightness" type="range" min="-100" max="100" value="0"></div>
+          <div class="slider-group"><label>對比 <output id="contrastOut">0</output></label><input id="contrast" type="range" min="-100" max="100" value="0"></div>
+          <div class="slider-group"><label>飽和度 <output id="saturationOut">0</output></label><input id="saturation" type="range" min="-100" max="100" value="0"></div>
+          <div class="slider-group"><label>暖色調 <output id="warmthOut">0</output></label><input id="warmth" type="range" min="-100" max="100" value="0"></div>
+        </div>
+        <div class="panel"><div class="panel-title"><span>裁剪比例</span></div><div class="ratios" id="ratios"><button data-ratio="free" class="active">自由</button><button data-ratio="1">1 : 1</button><button data-ratio="1.333333">4 : 3</button><button data-ratio="1.777778">16 : 9</button></div><button class="crop-toggle" id="cropToggle">⌗ 啟用裁剪框</button></div>
+        <div class="panel"><div class="panel-title"><span>輸出尺寸</span></div><div class="dimensions"><label>寬 <input id="width" type="number" min="1" disabled><span>px</span></label><b>×</b><label>高 <input id="height" type="number" min="1" disabled><span>px</span></label></div><label class="lock"><input type="checkbox" id="lockRatio" checked> <span>鎖定原始比例</span></label></div>
+        <button class="download" id="download" disabled>下載成品 <span>↓</span></button>
+      </aside>
+    </section>
+  </main>
+  <footer><span>所有編輯皆在瀏覽器中完成</span><span>✦ LUMINA PHOTO STUDIO</span></footer>
+  <script src="app.js"></script>
+</body></html>
