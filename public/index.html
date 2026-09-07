@@ -15,7 +15,7 @@
     <section class="intro"><p class="eyebrow">BROWSER PHOTO STUDIO</p><h1>把平凡瞬間，<em>調成你的色彩。</em></h1><p>上傳照片，立即調整光線、色彩、裁切與尺寸。所有操作都在你的裝置內完成。</p></section>
     <section class="studio" id="studio">
       <div class="canvas-area" id="dropZone">
-        <div class="empty-state" id="emptyState"><div class="upload-icon">↑</div><h2>放入一張照片</h2><p>拖曳至此，或從裝置選擇檔案</p><label for="fileInput" class="upload-btn">選擇照片 <span>→</span></label><input id="fileInput" type="file" accept="image/*" hidden><small>支援 JPG、PNG、WebP</small></div>
+        <div class="empty-state" id="emptyState"><div class="upload-icon">↑</div><h2>放入一張照片</h2><p id="uploadMessage">拖曳至此，或從裝置選擇檔案</p><label for="fileInput" class="upload-btn">選擇照片 <span>→</span></label><input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden><small>支援 JPG、PNG、WebP、GIF</small></div>
         <div class="image-wrap hidden" id="imageWrap"><canvas id="editorCanvas"></canvas><div class="crop-box hidden" id="cropBox"><i class="handle nw"></i><i class="handle ne"></i><i class="handle sw"></i><i class="handle se"></i></div></div>
         <div class="drop-hint hidden" id="dropHint">放開以載入照片</div>
       </div>
