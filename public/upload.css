@@ -1,0 +1,4 @@
+.upload-kicker{margin:0 0 8px!important;color:#e95a3e!important;font:11px 'DM Mono'!important;letter-spacing:.14em}
+.empty-state{border:2px dashed #c9bfb0;padding:54px 62px;background:#f8f5ef;cursor:pointer;transition:border-color .2s,background .2s}
+.empty-state:hover{border-color:#e95a3e;background:#fffaf3}.empty-state h2{margin-top:0}
+.replace-photo{display:block;margin:15px 0 0;border:1px dashed #c9bfb0;padding:10px 12px;color:#b24531;font-size:12px;cursor:pointer;text-align:center}.replace-photo:hover{border-color:#e95a3e;background:#fff7f1}
